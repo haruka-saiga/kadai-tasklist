@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Http\Requests;
+
+use App\Task; 
+
 class TasksController extends Controller
 {
     /**
@@ -13,7 +17,7 @@ class TasksController extends Controller
      */
     public function index()
     {
-        $messages = Message::all();
+        $tasks = Task::all();
 
         return view('tasks.index', [
             'tasks' => $tasks,

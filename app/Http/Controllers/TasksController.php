@@ -148,8 +148,10 @@ class TasksController extends Controller
     {
          $tasks = Task::find($id);
         
-        if (\Auth::user()->id === $task->user_id){
-            $tasks->delete();}
+        if (\Auth::user()->id === $tasks->user_id){
+            $tasks->delete();
+            return redirect('/');
+        }
         
        return redirect('/');
 
